@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "jwt/version"
-Dir["#{File.dirname(__FILE__)}/**/*.rb"].each { |file| require file }
+Dir["#{File.dirname(__FILE__)}/**/*.rb"].sort.map { |file| require file }
 require "active_support/core_ext/hash/indifferent_access"
 
 module Jwt

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Jwt::TokenTtlCalculator do
   before { Jwt.secret = "secret" }
 

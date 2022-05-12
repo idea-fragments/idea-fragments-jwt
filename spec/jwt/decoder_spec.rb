@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 RSpec.describe Jwt::Decoder do
-  let(:payload) { { data: 'test' } }
+  let(:payload) { { data: "test" } }
   let(:token) { JWT.encode(payload, Jwt.secret, Jwt.algorithm) }
 
   it "decodes token" do

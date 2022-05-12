@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Jwt::Decoder
   def self.call(token = "", verify_sig: true, exp_leeway: 0)
     decoded_token = JWT.decode(
