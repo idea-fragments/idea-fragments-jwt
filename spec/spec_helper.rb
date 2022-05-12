@@ -1,8 +1,13 @@
 # frozen_string_literal: true
 
 require "jwt"
+require "idea-fragments-jwt"
+require "timecop"
 
 RSpec.configure do |config|
+  Jwt.algorithm = "HS512"
+  Jwt.secret = "omg the secret"
+
   # Enable flags like --only-failures and --next-failure
   config.example_status_persistence_file_path = ".rspec_status"
 

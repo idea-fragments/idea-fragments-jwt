@@ -2,19 +2,19 @@ RSpec.describe Jwt::TokenTtlCalculator do
   before { Jwt.secret = "secret" }
 
   it "Calculates remaining time for JWT" do
-    freeze_time
-    token = Jwt::Encoder.call({ exp: 2.minutes.from_now.to_i })
-    travel_to(1.minute.from_now)
+    Timecop.freeze
+    token = Jwt::Encoder.call({ exp: (Time.now + 60 * 2).to_i })
+    Timecop.freeze(Time.now + 60)
 
     expect(Jwt::TokenTtlCalculator.call(token))
-      .to eq(1.minute)
+      .to eq(60)
   end
 
   context "When token is expired" do
     it "Returns 0" do
-      freeze_time
-      token = Jwt::Encoder.call({ exp: 2.minutes.from_now.to_i })
-      travel_to(2.minute.from_now)
+      Timecop.freeze
+      token = Jwt::Encoder.call({ exp: (Time.now + 60 * 2).to_i })
+      Timecop.freeze((Time.now + 60 * 2))
 
       expect(Jwt::TokenTtlCalculator.call(token))
         .to eq(0)
