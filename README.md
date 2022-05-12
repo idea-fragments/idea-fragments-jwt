@@ -1,4 +1,5 @@
 # IdeaFragments Jwt
+![example workflow](https://github.com/idea-fragments/idea-fragments-jwt/actions/workflows/main.yml/badge.svg)
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in `lib/jwt`. To experiment with that code, run `bin/console` for an interactive prompt.
 
