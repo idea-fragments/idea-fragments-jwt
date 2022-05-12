@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 require "jwt"
-require "idea-fragments-jwt"
 require "timecop"
+require_relative "../lib/idea_fragments_jwt"
 
 RSpec.configure do |config|
   Jwt.algorithm = "HS512"
