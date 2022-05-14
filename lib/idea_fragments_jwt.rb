@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "active_support/core_ext/hash/indifferent_access"
+require "jwt"
 
 module Jwt
   NoExpirationError = Class.new(StandardError)
