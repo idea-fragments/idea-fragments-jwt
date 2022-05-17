@@ -12,5 +12,6 @@ gem "rspec", "~> 3.0"
 gem "rubocop", "~> 1.21"
 
 group :test do
+  gem "rubocop-rspec", require: false
   gem "timecop", "~> 0.9"
 end
