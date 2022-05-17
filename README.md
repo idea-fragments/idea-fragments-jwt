@@ -1,16 +1,18 @@
 # IdeaFragments Jwt
 ![example workflow](https://github.com/idea-fragments/idea-fragments-jwt/actions/workflows/main.yml/badge.svg)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in `lib/jwt`. To experiment with that code, run `bin/console` for an interactive prompt.
+### Note: In most cases, you won't need this gem.
+See https://github.com/jwt/ruby-jwt
+___
 
-TODO: Delete this and the text above, and describe your gem
+Helper functions to assist with JWT management. This gem is built around the existing `jwt` and mainly abstracts away the need to always pass a jwt algorithm or secret when using a jwt service. Rather, the services provided with this gem will make use of the secret and algorithm you predefine in an initializer.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "idea-fragments-jwt"
+gem "idea-fragments-jwt", "~> 0.1", git: "https://github.com/idea-fragments/idea-fragments-jwt"
 ```
 
 And then execute:
@@ -19,7 +21,18 @@ And then execute:
 
 ## Usage
 
-TODO: Write usage instructions here
+The gem will need to be required in your code. Since the gem is loaded from a git repo, you'll need to require bundler/setup before requiring the gem.
+
+```ruby
+require "bundler/setup"
+require "idea_fragments_jwt"
+```
+
+Create a file in `config/initializers` called `idea_fragments_jwt.rb` and add the following:
+```ruby
+Jwt.algorithm = "<your hashing algorithm>"
+Jwt.secret = "<your secret key>"
+```
 
 ## Development
 
