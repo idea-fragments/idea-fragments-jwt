@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    idea-fragments-jwt (0.1.0)
+    idea-fragments-jwt (0.1.1)
       activesupport (~> 7.0)
       jwt (~> 2.3)
       rake (~> 13.0)
@@ -64,10 +64,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  activesupport
   idea-fragments-jwt!
-  jwt (~> 2.3)
-  rake (~> 13.0)
   rspec (~> 3.0)
   rubocop (~> 1.21)
   rubocop-rspec
