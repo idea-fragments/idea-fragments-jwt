@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "lib/jwt/version"
+require_relative "lib/idea-fragments-jwt/version"
 
 Gem::Specification.new do |spec|
   spec.name = "idea-fragments-jwt"
@@ -33,12 +33,12 @@ Gem::Specification.new do |spec|
 
   # Uncomment to register a new dependency of your gem
   spec.add_dependency "activesupport", "~> 7.0"
-  spec.add_dependency "jwt", "~> 2.3"
+  spec.add_dependency "jwt"
   spec.add_dependency "rake", "~> 13.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "rubocop", "~> 1.21"
+  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "rubocop"
   spec.add_development_dependency "rubocop-rspec"
-  spec.add_development_dependency "timecop", "~> 0.9"
+  spec.add_development_dependency "timecop"
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
