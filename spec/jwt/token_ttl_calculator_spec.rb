@@ -16,7 +16,7 @@ RSpec.describe Jwt::TokenTtlCalculator do
     it "Returns 0" do
       Timecop.freeze
       token = Jwt::Encoder.call(payload: { exp: (Time.now + 60 * 2).to_i })
-      Timecop.freeze((Time.now + 60 * 2))
+      Timecop.freeze(Time.now + 60 * 2)
 
       expect(Jwt::TokenTtlCalculator.call(token:))
         .to eq(0)
