@@ -5,6 +5,6 @@ RSpec.describe Jwt::Decoder do
   let(:token) { JWT.encode(payload, Jwt.secret, Jwt.algorithm) }
 
   it "decodes token" do
-    expect(Jwt::Decoder.call(token)).to include(payload)
+    expect(Jwt::Decoder.call(token:)).to include(payload)
   end
 end
